@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(param) {
+        document.write(param);
+        pulaLinha();
+    }
+
+    function calculaImc(altura, peso) {
+        var imc = peso / (altura * altura);
+        mostra("O imc é: " + imc);
+    }
+
+    function calculaImcComRetorno(altura, peso) {
+        return peso / (altura * altura);
+    }
+
+    var pesoFlavio = 73;
+    var alturaFlavio = 1.71;
+    var imcFlavio = pesoFlavio / (alturaFlavio * alturaFlavio);
+    mostra("O IMC do Flávio é: " + imcFlavio);
+
+    calculaImc(1.73,65);
+    mostra("O IMC do Amigo é: " + calculaImcComRetorno(1.90,100));
+
+    mostra("A soma dos IMC's é: " + (imcFlavio + calculaImcComRetorno(1.90,100)));
+
+    var nome = prompt("Qual seu nome?");
+    var alturaInformada = prompt(nome + ", qual sua altura?");
+    var pesoInformado = prompt(nome + ", qual seu peso?");
+    mostra(nome + ", seu IMC é: " + calculaImcComRetorno(alturaInformada , pesoInformado)  );
+
+    mostra("Seu IMC para os valores informado é: " + ( calculaImcComRetorno(prompt("Qual sua altura?") , prompt("Qual seu peso?") ) ) );
+
+</script>
